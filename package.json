@@ -1,0 +1,33 @@
+{
+    "name": "tma-test",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "dependencies": {
+        "classnames": "^2.5.1",
+        "next": "16.0.5",
+        "react": "19.2.0",
+        "react-dom": "19.2.0",
+        "sass": "^1.94.2"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "babel-plugin-react-compiler": "1.0.0",
+        "baseline-browser-mapping": "^2.8.32",
+        "eslint": "^9",
+        "eslint-config-next": "16.0.5",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.4",
+        "prettier": "^3.7.1",
+        "typescript": "^5"
+    }
+}

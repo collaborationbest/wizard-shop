@@ -1,0 +1,83 @@
+.button {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    inline-size: var(--button-inline-size, clamp(14.375rem, 75vw, 21.25rem));
+    aspect-ratio: 788 / 317;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+
+    background: transparent;
+    background-image: url('/buttons/active.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    color: var(--white);
+    font-size: var(--button-font-size, clamp(1rem, 2.4vw, 1.4rem));
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease;
+
+    &:focus-visible {
+        outline: 0.1875rem solid var(--white-70);
+        outline-offset: 0.25rem;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:not(:disabled):hover {
+            transform: translateY(-2px);
+        }
+    }
+
+    &:not(:disabled):active {
+        transform: translateY(1px);
+        filter: brightness(0.95);
+    }
+
+    &.disabled {
+        background-image: url('/buttons/disable.png');
+
+        color: var(--white-80);
+
+        cursor: not-allowed;
+    }
+}
+
+.fullWidth {
+    inline-size: 100%;
+}
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.md {
+    --button-inline-size: clamp(7rem, 60vw, 9rem);
+    --button-font-size: clamp(0.95rem, 2.1vw, 1.25rem);
+
+    padding-bottom: 10px;
+}
+
+.lg {
+    --button-inline-size: clamp(10rem, 80vw, 15rem);
+    --button-font-size: clamp(1.05rem, 2.6vw, 1.45rem);
+    padding-bottom: 20px;
+}

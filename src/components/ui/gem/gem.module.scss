@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+
+    height: 40px;
+    width: 40px;
+}
+
+.gem {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+}

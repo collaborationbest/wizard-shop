@@ -1,0 +1,195 @@
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    box-shadow: 0px 4px 40px 8px var(--primary-1);
+
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+
+    padding: 30px;
+    overflow: hidden;
+    border: 4px solid var(--primary-2);
+
+    position: relative;
+
+    --spin-marker-line-length: 39%;
+    --spin-marker-dot-offset: 20px;
+
+    .wrap {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+
+        z-index: -1;
+        border: 2px solid var(--primary-3);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow: 0px 4px 35px 0px var(--primary-2);
+    }
+
+    .logoButton {
+        border-radius: 50%;
+        padding: 0;
+        cursor: pointer;
+        box-shadow: 0px 4px 80px 40px var(--primary-4);
+        transition:
+            transform 200ms ease,
+            filter 200ms ease;
+        touch-action: manipulation;
+        border: 2px solid var(--primary-2);
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        z-index: 10;
+
+        width: 40px;
+        height: 40px;
+
+        &:focus-visible {
+            outline: 2px solid var(--primary-2);
+            outline-offset: 4px;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            filter: grayscale(0.2);
+        }
+
+        &:not(:disabled):hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+    }
+
+    .logo {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    .markers {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    .marker {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+        transform: rotate(0deg);
+    }
+
+    .labels {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        will-change: transform;
+        font-family: inherit;
+
+        z-index: 10;
+    }
+
+    .label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center center;
+
+        z-index: 100;
+    }
+
+    .badgeWrapper {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform-origin: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+
+        z-index: 100;
+    }
+
+    .line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: var(--spin-marker-line-length);
+        background-color: var(--primary-2);
+        transform: translate(-50%, -100%);
+        transform-origin: center bottom;
+        border-radius: 999px;
+    }
+
+    .dot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--primary-2);
+        left: 50%;
+        top: calc(
+            50% - var(--spin-marker-line-length) - var(--spin-marker-dot-offset)
+        );
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px var(--shadow-ambient);
+    }
+
+    .iconBadge {
+        position: relative;
+        width: 50px;
+        height: 30px;
+
+        .shadow {
+            box-shadow: 0px 0px 25px 8px var(--shadow-highlight);
+            position: absolute;
+            z-index: -1;
+
+            width: 5px;
+            height: 15px;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .badgeIcon {
+        display: block;
+        font-size: 22px;
+        line-height: 1;
+    }
+}
+
+.gem {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+    z-index: 3;
+    pointer-events: none;
+}

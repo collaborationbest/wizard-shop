@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Belozersk';
+    src: url('https://db.onlinewebfonts.com/t/5051fb86e7267d71788b20bff8401479.eot');
+    src:
+        url('https://db.onlinewebfonts.com/t/5051fb86e7267d71788b20bff8401479.eot?#iefix')
+            format('embedded-opentype'),
+        url('https://db.onlinewebfonts.com/t/5051fb86e7267d71788b20bff8401479.woff2')
+            format('woff2'),
+        url('https://db.onlinewebfonts.com/t/5051fb86e7267d71788b20bff8401479.woff')
+            format('woff'),
+        url('https://db.onlinewebfonts.com/t/5051fb86e7267d71788b20bff8401479.ttf')
+            format('truetype'),
+        url('https://db.onlinewebfonts.com/t/5051fb86e7267d71788b20bff8401479.svg#Belozersk')
+            format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Benzin-Bold';
+    src: url('https://db.onlinewebfonts.com/t/e37c5bb24acd803973c692c8c59a6230.eot');
+    src:
+        url('https://db.onlinewebfonts.com/t/e37c5bb24acd803973c692c8c59a6230.eot?#iefix')
+            format('embedded-opentype'),
+        url('https://db.onlinewebfonts.com/t/e37c5bb24acd803973c692c8c59a6230.woff2')
+            format('woff2'),
+        url('https://db.onlinewebfonts.com/t/e37c5bb24acd803973c692c8c59a6230.woff')
+            format('woff'),
+        url('https://db.onlinewebfonts.com/t/e37c5bb24acd803973c692c8c59a6230.ttf')
+            format('truetype'),
+        url('https://db.onlinewebfonts.com/t/e37c5bb24acd803973c692c8c59a6230.svg#Benzin-Bold')
+            format('svg');
+}
+
+:root {
+    --max-width: 420px;
+    --background: #ffffff;
+    --foreground: #171717;
+
+    // Core palette
+    --accent: #8873b5;
+    --dark: #131927;
+    --primary: #010c2a;
+    --primary-1: #2fafe9;
+    --primary-2: #a5fcf8;
+    --primary-3: #69d8ec;
+    --primary-4: #0494eb;
+
+    --white: #ffffff;
+    --white-70: #ffffffb3;
+    --white-80: #ffffffcc;
+    --black: #000000;
+
+    --overlay-backdrop: #051222cc;
+    --modal-surface: #00000094;
+
+    --shadow-highlight: #f9c747;
+    --shadow-ambient: #00000026;
+    --text-glow: #2fafe9;
+    --text-glow-strong: #2fafe98c;
+    --text-glow-soft: #2fafe94d;
+    --text-light-shadow-strong: #2fafe973;
+    --text-light-shadow-soft: #2fafe959;
+
+    --text-primary-color: #039beb;
+    --text-primary-stroke: #95fdff;
+
+    --glass-surface: #ffffffd1;
+    --glass-border: #ffffff47;
+    --glass-shadow: #13192740;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Belozersk';
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--foreground);
+
+    background-color: var(--primary);
+
+    position: relative;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--primary-3);
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-4);
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-3) transparent;
+}
+
+body::before {
+    content: '';
+
+    position: fixed;
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100dvh;
+
+    z-index: 0;
+    pointer-events: none;
+
+    background-image: url('/static/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.25;
+}
+
+main {
+    width: 100%;
+    max-width: var(--max-width);
+    min-height: 100vh;
+}
